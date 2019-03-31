@@ -20,6 +20,7 @@
     <PackageReference Include="HtmlTags.AspNetCore" Version="7.0.3" />
     <PackageReference Include="MediatR" Version="5.0.1" />
     <PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="5.0.2" />
+    <PackageReference Include="Microsoft.ApplicationInsights.TraceListener" Version="2.9.1" />
     <PackageReference Include="Microsoft.AspNetCore.App" />
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.1.1" PrivateAssets="All" />
     <PackageReference Include="MiniProfiler.AspNetCore.Mvc" Version="4.0.119" />

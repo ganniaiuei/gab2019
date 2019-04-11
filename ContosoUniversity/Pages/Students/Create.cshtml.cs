@@ -69,7 +69,7 @@ namespace ContosoUniversity.Pages.Students
             public async Task<int> Handle(Command message, CancellationToken token)
             {
                 var student = _mapper.Map<Command, Student>(message);
-
+				student.Id = 1;
                 _db.Students.Add(student);
 
                 await _db.SaveChangesAsync(token);

@@ -4,6 +4,8 @@
     <TargetFramework>netcoreapp2.1</TargetFramework>
     <LangVersion>latest</LangVersion>
     <UserSecretsId>ed932e79-7576-4a10-a971-0c5b5c40e55f</UserSecretsId>
+    <ApplicationInsightsResourceId>/subscriptions/5954ff32-c161-480a-9139-c0ee7ae3bee3/resourcegroups/gab-2019/providers/microsoft.insights/components/gab2019-cu</ApplicationInsightsResourceId>
+    <ApplicationInsightsAnnotationResourceId>/subscriptions/5954ff32-c161-480a-9139-c0ee7ae3bee3/resourcegroups/gab-2019/providers/microsoft.insights/components/gab2019-cu</ApplicationInsightsAnnotationResourceId>
   </PropertyGroup>
 
   <ItemGroup>
@@ -20,11 +22,17 @@
     <PackageReference Include="HtmlTags.AspNetCore" Version="7.0.3" />
     <PackageReference Include="MediatR" Version="5.0.1" />
     <PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="5.0.2" />
+    <PackageReference Include="Microsoft.ApplicationInsights.AspNetCore" Version="2.6.1" />
     <PackageReference Include="Microsoft.ApplicationInsights.TraceListener" Version="2.9.1" />
+    <PackageReference Include="Microsoft.ApplicationInsights.Web" Version="2.9.1" />
     <PackageReference Include="Microsoft.AspNetCore.App" />
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.1.1" PrivateAssets="All" />
     <PackageReference Include="MiniProfiler.AspNetCore.Mvc" Version="4.0.119" />
     <PackageReference Include="MiniProfiler.EntityFrameworkCore" Version="4.0.119" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services" />
   </ItemGroup>
 
 </Project>

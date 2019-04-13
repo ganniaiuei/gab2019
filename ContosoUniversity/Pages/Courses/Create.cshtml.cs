@@ -1,5 +1,4 @@
-﻿using System;
-using System.Threading;
+﻿using System.Threading;
 using System.Threading.Tasks;
 using AutoMapper;
 using ContosoUniversity.Data;
@@ -60,7 +59,9 @@ namespace ContosoUniversity.Pages.Courses
                 course.Id = message.Number;
 
                 _db.Courses.Add(course);
+
                 await _db.SaveChangesAsync(token);
+
                 return course.Id;
             }
         }

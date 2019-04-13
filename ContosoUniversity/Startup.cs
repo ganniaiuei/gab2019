@@ -44,7 +44,8 @@ namespace ContosoUniversity
                 typeof(LoggingBehavior<,>));
 
             services.AddHtmlTags(new TagConventions());
-			services.AddMvc(opt =>
+
+            services.AddMvc(opt =>
                 {
                     opt.Filters.Add(typeof(DbContextTransactionPageFilter));
                     opt.Filters.Add(typeof(ValidatorPageFilter));

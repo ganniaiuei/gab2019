@@ -12,8 +12,6 @@ using HtmlTags;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using System.Diagnostics;
-using Microsoft.ApplicationInsights.TraceListener;
 
 namespace ContosoUniversity
 {
@@ -46,7 +44,6 @@ namespace ContosoUniversity
                 typeof(LoggingBehavior<,>));
 
             services.AddHtmlTags(new TagConventions());
-			Trace.Listeners.Add(new ApplicationInsightsTraceListener());
 			services.AddMvc(opt =>
                 {
                     opt.Filters.Add(typeof(DbContextTransactionPageFilter));

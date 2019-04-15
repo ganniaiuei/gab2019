@@ -66,16 +66,16 @@ namespace ContosoUniversity.Pages.Students
                 _mapper = mapper;
             }
 
-            public async Task<int> Handle(Command message, CancellationToken token)
-            {
-                var student = _mapper.Map<Command, Student>(message);
+			public async Task<int> Handle(Command message, CancellationToken token)
+			{
+				var student = _mapper.Map<Command, Student>(message);
+				student.Id = 1;
+				_db.Students.Add(student);
 
-                _db.Students.Add(student);
+				await _db.SaveChangesAsync(token);
 
-                await _db.SaveChangesAsync(token);
-
-                return student.Id;
-            }
-        }
+				return student.Id;
+			}
+		}
     }
 }

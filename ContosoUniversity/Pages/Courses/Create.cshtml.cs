@@ -1,4 +1,5 @@
-﻿using System.Threading;
+﻿using System;
+using System.Threading;
 using System.Threading.Tasks;
 using AutoMapper;
 using ContosoUniversity.Data;
@@ -53,17 +54,17 @@ namespace ContosoUniversity.Pages.Courses
                 _mapper = mapper;
             }
 
-            public async Task<int> Handle(Command message, CancellationToken token)
-            {
-                var course = _mapper.Map<Command, Course>(message);
-                course.Id = message.Number;
+			public async Task<int> Handle(Command message, CancellationToken token)
+			{
+				var course = _mapper.Map<Command, Course>(message);
+				course.Id = message.Number;
 
-                _db.Courses.Add(course);
+				_db.Courses.Add(course);
+				throw new NotImplementedException("This Exception should be tracked by Application insights");
+				await _db.SaveChangesAsync(token);
 
-                await _db.SaveChangesAsync(token);
-
-                return course.Id;
-            }
-        }
+				return course.Id;
+			}
+		}
     }
 }

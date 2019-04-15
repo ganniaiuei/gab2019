@@ -12,6 +12,7 @@ using HtmlTags;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using System.Diagnostics;
 
 namespace ContosoUniversity
 {
@@ -28,9 +29,9 @@ namespace ContosoUniversity
 
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddMiniProfiler().AddEntityFramework();
-
-            services.AddDbContext<SchoolContext>(options =>
+			//services.AddMiniProfiler().AddEntityFramework();
+			//Trace.Listeners.Add(new ApplicationInsightsTraceListener());
+			services.AddDbContext<SchoolContext>(options =>
                 options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
 
             services.AddAutoMapper(typeof(Startup));
@@ -58,7 +59,7 @@ namespace ContosoUniversity
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
-            app.UseMiniProfiler();
+            //app.UseMiniProfiler();
             
             if (env.IsDevelopment())
             {

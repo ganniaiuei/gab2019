@@ -13,6 +13,7 @@ using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System.Diagnostics;
+using Microsoft.ApplicationInsights.TraceListener;
 
 namespace ContosoUniversity
 {
@@ -30,7 +31,7 @@ namespace ContosoUniversity
         public void ConfigureServices(IServiceCollection services)
         {
 			//services.AddMiniProfiler().AddEntityFramework();
-			//Trace.Listeners.Add(new ApplicationInsightsTraceListener());
+			Trace.Listeners.Add(new ApplicationInsightsTraceListener());
 			services.AddDbContext<SchoolContext>(options =>
                 options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
 
